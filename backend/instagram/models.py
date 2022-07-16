@@ -11,7 +11,6 @@ class TimestampedModel(models.Model):
     class Meta:
         abstract = True
 
-
 class Post(TimestampedModel):
     author = models.ForeignKey(
         settings.AUTH_USER_MODEL, related_name="my_post_set", on_delete=models.CASCADE
