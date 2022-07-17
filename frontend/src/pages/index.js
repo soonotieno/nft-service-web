@@ -8,7 +8,6 @@ import AccountRoutes from "./accounts";
 function Root() {
     return(
         <AppLayout>
-            최상위 컴포넌트
             <Routes>
                 <Route exact path="/" element={<Home />} />
                 <Route exact path="/about" element={<About />} />

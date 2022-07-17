@@ -2,8 +2,9 @@ import React from 'react';
 import { createRoot } from 'react-dom/client';
 //import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
-import './index.css';
 import Root from "pages";
+import 'antd/dist/antd.min.css';
+import './index.css';
 
 
 const container = document.getElementById('root');

@@ -1,14 +1,35 @@
 import React from "react";
-import AppHeader from "./AppHeader";
-import AppFooter from "./AppFooter";
+import { Input, Menu } from "antd";
+import "./AppLayout.scss"
+import StoryList from "./StoryList";
+import SuggestionList from "./SuggestionList";
+import LogoImage from "assets/logo.png";
 
 function AppLayout({children}){
     return (
-        <>
-            <AppHeader />
-            {children}
-            <AppFooter />
-        </>
+        <div className="app">
+            <div className="header">
+                <h1 className="page-title">
+                    <img src={LogoImage} alt="logo" />
+                </h1>
+                <div className="search"><Input.Search placeholder="검색어 입력" /></div>
+                <div className="topnav">
+                    <Menu mode="horizontal">
+                        <Menu.Item>메뉴1</Menu.Item>
+                        <Menu.Item>메뉴2</Menu.Item>
+                        <Menu.Item>메뉴3</Menu.Item>
+                    </Menu>
+                </div>
+            </div>
+            <div className="contents">{children}</div>
+            <div className="sidebar">
+                <StoryList style={{ marginBottom: "1rem"}} />
+                <SuggestionList />
+            </div>
+            <div className="footer">
+                &copy; 2022. Ask, We Are The World, WATO
+            </div>
+        </div>
     );
 }
 
