@@ -1,5 +1,5 @@
 import React from "react";
-import { Input, Menu } from "antd";
+import { Input, Menu } from "antd"; // Input, Menu
 import "./AppLayout.scss"
 import StoryList from "./StoryList";
 import SuggestionList from "./SuggestionList";
