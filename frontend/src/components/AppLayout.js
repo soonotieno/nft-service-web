@@ -5,7 +5,18 @@ import StoryList from "./StoryList";
 import SuggestionList from "./SuggestionList";
 import LogoImage from "assets/logo.png";
 
+
 function AppLayout({children}){
+    const items = [
+        { label: '메뉴1', key: 'item-1' }, // remember to pass the key prop
+        { label: '메뉴2', key: 'item-2' }, // which is required
+        {
+          label: '메뉴3',
+          key: 'item-3',
+          children: [{ label: 'item 3', key: 'submenu-item-1' }],
+        },
+      ]
+
     return (
         <div className="app">
             <div className="header">
@@ -14,11 +25,7 @@ function AppLayout({children}){
                 </h1>
                 <div className="search"><Input.Search placeholder="검색어 입력" /></div>
                 <div className="topnav">
-                    <Menu mode="horizontal">
-                        <Menu.Item>메뉴1</Menu.Item>
-                        <Menu.Item>메뉴2</Menu.Item>
-                        <Menu.Item>메뉴3</Menu.Item>
-                    </Menu>
+                    <Menu mode = "horizontal" items={items} />
                 </div>
             </div>
             <div className="contents">{children}</div>

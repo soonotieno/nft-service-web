@@ -1,11 +1,13 @@
 import React, {useEffect, useState} from "react";
 import Axios from "axios"
 import Post from "./Post";
+import { useAppContext } from "store";
 
 const apiUrl = "http://localhost:8000/api/posts/"
 
 function PostList(){
-const [postList, setPostList] = useState([]);
+    const { store: { jwtToken } } = useAppContext(); // Context API 를 활용해서 모든 컨포넌트에서 (JWT 토큰) 정보 공유
+    const [postList, setPostList] = useState([]);
 
     useEffect( () => {
         Axios.get(apiUrl)
